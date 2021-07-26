@@ -4,7 +4,12 @@ import { auth, signInWithGoogle } from '../../firebase/firebase.utils';
 import CustomButton from '../custom-button/custom-button.component';
 import FormInput from '../form-input/form-input.component';
 
-import './sign-in.styles.scss';
+import './sign-in.styles.jsx';
+import {
+  ButtonsBarContainer,
+  SignInContainer,
+  SignInTitle
+} from './sign-in.styles.jsx';
 
 class SignIn extends React.Component {
   constructor(props) {
@@ -37,8 +42,8 @@ class SignIn extends React.Component {
 
   render() {
     return (
-      <div className='sign-in'>
-        <h2>I already have an account</h2>
+      <SignInContainer>
+        <SignInTitle>I already have an account</SignInTitle>
         <span>Sign in with your email and password</span>
 
         <form onSubmit={this.handleSubmit} autoComplete='off'>
@@ -59,7 +64,7 @@ class SignIn extends React.Component {
             required
           />
 
-          <div className='buttons'>
+          <ButtonsBarContainer>
             <CustomButton type='submit'>Sign in</CustomButton>
             <CustomButton
               type='button'
@@ -67,9 +72,9 @@ class SignIn extends React.Component {
               onClick={signInWithGoogle}>
               Sign in with Google
             </CustomButton>
-          </div>
+          </ButtonsBarContainer>
         </form>
-      </div>
+      </SignInContainer>
     );
   }
 }
