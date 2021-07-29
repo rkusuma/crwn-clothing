@@ -4,10 +4,10 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import { createStructuredSelector } from 'reselect';
 
 import './App.css';
-import Header from './components/header/header.component';
+import { default as Header } from './components/header/header.container';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
-import CheckoutPage from './pages/checkout/checkout.component';
+import { default as CheckoutPage } from './pages/checkout/checkout.container';
 import HomePage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.component';
 import SignInAndSignUp from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
